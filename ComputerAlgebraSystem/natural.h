@@ -3,7 +3,11 @@
 
 
 class natural {
-
+public:
+    natural(const std::string& str);
+private:
+    int quantity_;
+    int digits_;
 };
 
 
