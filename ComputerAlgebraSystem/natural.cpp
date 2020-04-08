@@ -9,7 +9,7 @@ natural::natural(const std::string &str):
     }
 }
 
-natural::natural() :
+natural::natural():
     quantity_(1), digits_(new int)
 {
     digits_[0] = 0;
