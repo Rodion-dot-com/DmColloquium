@@ -24,9 +24,29 @@ natural::natural(const natural &other):
     }
 }
 
+natural::natural(int quantity, const int *digits):
+    quantity_(quantity), digits_(new int[quantity_])
+{
+    for(int i = 0; i < quantity_; ++i)
+    {
+        digits_[i] = digits[i];
+    }
+}
+
 natural::~natural()
 {
-    delete[] digits_;
+    if(digits_)
+        delete[] digits_;
+}
+
+int natural::get_quantity() const
+{
+    return quantity_;
+}
+
+int* natural::get_digits() const
+{
+    return digits_;
 }
 
 natural & natural::operator=(const natural &other)
